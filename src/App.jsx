@@ -1,13 +1,19 @@
 import React from 'react';
 
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+
+import Routes from './routes';
+
 import GlobalStyle from './styles/global';
 import { dark, light } from './styles/themes';
 
 const App = () => (
   <ThemeProvider theme={dark || light}>
-    <GlobalStyle />
-    <h1>Hello World!</h1>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes />
+    </BrowserRouter>
   </ThemeProvider>
 );
 
