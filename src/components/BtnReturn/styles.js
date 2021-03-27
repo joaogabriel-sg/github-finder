@@ -11,7 +11,7 @@ export const Button = styled(Link)`
   width: 100%;
   max-width: ${({ isStyled }) => (isStyled ? '20rem' : '100%')};
 
-  padding: 0.8rem 0;
+  padding: ${({ isStyled }) => (isStyled ? '0.8rem 0' : '0')};
   border-radius: 0.8rem;
   margin-left: ${({ isStyled }) => (isStyled ? '0' : '1.2rem')};
   margin-top: ${({ isStyled }) => (isStyled ? '2.4rem' : '0')};

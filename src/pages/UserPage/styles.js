@@ -30,4 +30,6 @@ export const Sidebar = styled.aside`
 
 export const Main = styled.main`
   background: ${({ theme }) => theme.colors.secondary};
+
+  padding: 2rem 4rem;
 `;
