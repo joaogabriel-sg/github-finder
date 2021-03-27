@@ -1,5 +1,15 @@
 import React from 'react';
 
-const SearchPage = () => <div>Search</div>;
+import SearchForm from './SearchForm';
+
+import { Container, Title, GitHubLogo } from './styles';
+
+const SearchPage = () => (
+  <Container>
+    <GitHubLogo />
+    <Title>GitHub Finder</Title>
+    <SearchForm />
+  </Container>
+);
 
 export default SearchPage;
