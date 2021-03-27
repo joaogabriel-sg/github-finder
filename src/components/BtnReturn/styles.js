@@ -13,6 +13,7 @@ export const Button = styled(Link)`
 
   padding: 0.8rem 0;
   border-radius: 0.8rem;
+  margin-left: ${({ isStyled }) => (isStyled ? '0' : '1.2rem')};
   margin-top: ${({ isStyled }) => (isStyled ? '2.4rem' : '0')};
 
   display: flex;
