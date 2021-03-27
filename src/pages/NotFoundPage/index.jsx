@@ -1,5 +1,14 @@
 import React from 'react';
 
-const NotFoundPage = () => <div>Not Found</div>;
+import BtnReturn from '../../components/BtnReturn';
+
+import { Container, NotFound } from './styles';
+
+const NotFoundPage = () => (
+  <Container>
+    <NotFound>Essa página não existe...</NotFound>
+    <BtnReturn text="Voltar ao início" isStyled />
+  </Container>
+);
 
 export default NotFoundPage;
