@@ -7,7 +7,8 @@ export const Container = styled.div`
   justify-content: space-between;
 
   padding: 2rem;
-  border-left: 0.4rem solid ${({ theme }) => theme.colors.text};
+  border-left: 0.4rem solid
+    ${({ theme, langColor }) => langColor || theme.colors.text};
   border-radius: 0.4rem;
 `;
 

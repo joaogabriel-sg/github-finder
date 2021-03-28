@@ -44,6 +44,7 @@ export const Data = styled.p`
   align-items: center;
 
   font-size: 1.4rem;
+  word-break: break-all;
 
   & + p {
     margin-top: 0.4rem;
@@ -57,5 +58,6 @@ export const Data = styled.p`
   a {
     display: flex;
     align-items: center;
+    word-break: break-all;
   }
 `;

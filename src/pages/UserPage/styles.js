@@ -30,6 +30,18 @@ export const Sidebar = styled.aside`
 
 export const Main = styled.main`
   background: ${({ theme }) => theme.colors.secondary};
-
+  height: 100vh;
+  overflow-y: auto;
   padding: 2rem 4rem;
+
+  &::-webkit-scrollbar {
+    background: ${({ theme }) => theme.colors.secondary};
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.primary};
+    border: 0.2rem solid ${({ theme }) => theme.colors.secondary};
+    border-radius: 1rem;
+  }
 `;

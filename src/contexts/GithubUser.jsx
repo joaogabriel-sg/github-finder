@@ -5,8 +5,8 @@ import api from '../services/api';
 export const GithubUserContext = createContext({});
 
 export const GithubUserProvider = ({ children }) => {
-  const [githubUserProfileData, setGithubUserProfileData] = useState({});
-  const [githubUserReposData, setGithubUserReposData] = useState({});
+  const [profileData, setProfileData] = useState({});
+  const [reposData, setReposData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -15,15 +15,15 @@ export const GithubUserProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const { data: userData } = await api.get(username);
-      const { data: reposData } = await api.get(`${username}/repos`);
+      const { data: user } = await api.get(username);
+      const { data: repos } = await api.get(`${username}/repos`);
 
-      setGithubUserProfileData(userData);
-      setGithubUserReposData(reposData);
+      setProfileData(user);
+      setReposData(repos);
     } catch (err) {
       setError(err);
-      setGithubUserProfileData(null);
-      setGithubUserReposData(null);
+      setProfileData(null);
+      setReposData(null);
     } finally {
       setLoading(false);
     }
@@ -32,8 +32,8 @@ export const GithubUserProvider = ({ children }) => {
   return (
     <GithubUserContext.Provider
       value={{
-        githubUserProfileData,
-        githubUserReposData,
+        profileData,
+        reposData,
         loading,
         error,
         getGithubUser,

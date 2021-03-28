@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import langColors from '../../../services/colorConfigs';
 
 import { Container, Languague, Cleaner } from './styles';
 
+import { GithubUserContext } from '../../../contexts/GithubUser';
+
 const Filter = () => {
   const [activeLang, setActiveLang] = useState(null);
+  const { reposData } = useContext(GithubUserContext);
 
-  const repositories = [
-    { language: 'HTML' },
-    { language: 'CSS' },
-    { language: 'JavaScript' },
-    { language: 'Python' },
-    { language: 'JavaScript' },
-    { language: 'Swift' },
-    { language: null },
-  ];
+  if (!reposData.length) return null;
 
-  if (!repositories.length) return null;
-
-  const countPerLanguage = repositories
+  const countPerLanguage = reposData
     .map(({ language }) => language)
     .reduce(
       (datas, language) => ({

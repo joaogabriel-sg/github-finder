@@ -27,7 +27,7 @@ export const Languague = styled.button`
   &.selected {
     width: 85%;
     background: ${({ theme, langColor }) =>
-      langColor ? langColor : theme.colors.palette.cloud};
+      langColor ? langColor : theme.colors.text};
     border-radius: 0 1.4rem 1.4rem 0;
 
     font-weight: 700;

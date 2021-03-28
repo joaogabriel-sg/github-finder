@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoPeople, IoBusiness, IoLocation, IoLink } from 'react-icons/io5';
 
 import {
@@ -11,45 +11,38 @@ import {
   Data,
 } from './styles';
 
+import { GithubUserContext } from '../../../contexts/GithubUser';
+
 const Profile = () => {
-  const githubUser = {
-    avatar_url: 'https://avatars.githubusercontent.com/u/74667683?v=4',
-    login: 'joaogabriel-sg',
-    name: 'João Gabriel',
-    followers: 27,
-    following: 43,
-    company: null,
-    location: 'Ceará, BR',
-    blog: 'https://github.com/joaogabriel-sg',
-  };
+  const { profileData } = useContext(GithubUserContext);
 
   return (
     <Container>
       <Header>
-        <Avatar src={githubUser.avatar_url} alt={githubUser.name} />
-        <Login>{githubUser.login}</Login>
-        <Name>{githubUser.name}</Name>
+        <Avatar src={profileData.avatar_url} alt={profileData.name} />
+        <Login>{profileData.login}</Login>
+        <Name>{profileData.name}</Name>
       </Header>
       <Content>
         <Data>
-          <IoPeople size={16} /> {githubUser.followers} followers &middot;{' '}
-          {githubUser.following} following
+          <IoPeople size={16} /> {profileData.followers} followers &middot;{' '}
+          {profileData.following} following
         </Data>
-        {githubUser.company && (
+        {profileData.company && (
           <Data>
-            <IoBusiness size={16} /> {githubUser.company}
+            <IoBusiness size={16} /> {profileData.company}
           </Data>
         )}
-        {githubUser.location && (
+        {profileData.location && (
           <Data>
-            <IoLocation size={16} /> {githubUser.location}
+            <IoLocation size={16} /> {profileData.location}
           </Data>
         )}
-        {githubUser.blog && (
+        {profileData.blog && (
           <Data>
             <IoLink size={16} />
-            <a href={githubUser.blog} target="_blank" rel="noreferrer">
-              {githubUser.blog}
+            <a href={profileData.blog} target="_blank" rel="noreferrer">
+              {profileData.blog}
             </a>
           </Data>
         )}
