@@ -2,6 +2,11 @@ import palette from './palette';
 
 const fonts = ['Lato', 'Helvetica', 'Arial', 'sans-serif '].join(', ');
 
+const mediaQueries = {
+  tablet: '768px',
+  mobile: '620px',
+};
+
 export const dark = {
   title: 'dark',
   colors: {
@@ -11,6 +16,7 @@ export const dark = {
     palette,
   },
   fonts,
+  mediaQueries,
 };
 
 export const light = {
@@ -22,4 +28,5 @@ export const light = {
     palette,
   },
   fonts,
+  mediaQueries,
 };

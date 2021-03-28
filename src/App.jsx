@@ -11,7 +11,7 @@ import GlobalStyle from './styles/global';
 import { dark, light } from './styles/themes';
 
 const App = () => (
-  <ThemeProvider theme={dark || light}>
+  <ThemeProvider theme={light || dark}>
     <GithubUserProvider>
       <BrowserRouter>
         <GlobalStyle />

@@ -37,4 +37,8 @@ export const Button = styled(Link)`
   svg {
     margin-right: 0.8rem;
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    width: ${({ isStyled }) => (isStyled ? '100%' : 'auto')};
+  }
 `;

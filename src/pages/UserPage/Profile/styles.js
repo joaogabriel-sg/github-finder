@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 1.2rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    padding: 0 1.2rem;
+  }
 `;
 
 export const Header = styled.header`

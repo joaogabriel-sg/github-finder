@@ -8,9 +8,14 @@ export const Container = styled.section`
 
   display: grid;
   grid-template-columns: 28rem 1fr;
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Sidebar = styled.aside`
+  background: ${({ theme }) => theme.colors.primary};
   height: 100vh;
   overflow-y: auto;
 
@@ -25,6 +30,13 @@ export const Sidebar = styled.aside`
     background: ${({ theme }) => theme.colors.secondary};
     border: 0.2rem solid ${({ theme }) => theme.colors.primary};
     border-radius: 1rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    height: auto;
+    overflow-y: visible;
+
+    padding: 2rem 0;
   }
 `;
 
@@ -43,5 +55,12 @@ export const Main = styled.main`
     background: ${({ theme }) => theme.colors.primary};
     border: 0.2rem solid ${({ theme }) => theme.colors.secondary};
     border-radius: 1rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    height: auto;
+    overflow-y: visible;
+
+    padding: 2rem 1.2rem;
   }
 `;

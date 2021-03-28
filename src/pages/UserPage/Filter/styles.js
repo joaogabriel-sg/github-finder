@@ -2,6 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 3.6rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
+    gap: 1.2rem;
+
+    padding: 0 1%;
+  }
 `;
 
 export const Languague = styled.button`
@@ -33,6 +41,16 @@ export const Languague = styled.button`
     font-weight: 700;
     color: ${({ theme, langColor }) =>
       langColor ? theme.colors.text : theme.colors.primary};
+
+    @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+      justify-self: center;
+      border-radius: 0.4rem;
+    }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    height: 4rem;
+    border-radius: 0.4rem;
   }
 `;
 
@@ -44,4 +62,10 @@ export const Cleaner = styled.button`
 
   font-size: 1.4rem;
   color: currentColor;
+
+  @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+  }
 `;
