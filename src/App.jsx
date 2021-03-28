@@ -5,15 +5,19 @@ import { ThemeProvider } from 'styled-components';
 
 import Routes from './routes';
 
+import { GithubUserProvider } from './contexts/GithubUser';
+
 import GlobalStyle from './styles/global';
 import { dark, light } from './styles/themes';
 
 const App = () => (
   <ThemeProvider theme={dark || light}>
-    <BrowserRouter>
-      <GlobalStyle />
-      <Routes />
-    </BrowserRouter>
+    <GithubUserProvider>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Routes />
+      </BrowserRouter>
+    </GithubUserProvider>
   </ThemeProvider>
 );
 
