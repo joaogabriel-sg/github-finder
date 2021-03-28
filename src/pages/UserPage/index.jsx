@@ -9,6 +9,7 @@ import Repositories from './Repositories';
 import { Container, Sidebar, Main } from './styles';
 
 import { GithubUserContext } from '../../contexts/GithubUser';
+import Loading from '../../components/Loading';
 
 const UserPage = () => {
   const { loading, error, getGithubUser } = useContext(GithubUserContext);
@@ -19,7 +20,7 @@ const UserPage = () => {
     getGithubUser(username);
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
   if (error) {
     history.go(-1);
