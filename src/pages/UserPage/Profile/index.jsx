@@ -41,7 +41,15 @@ const Profile = () => {
         {profileData.blog && (
           <Data>
             <IoLink size={16} />
-            <a href={profileData.blog} target="_blank" rel="noreferrer">
+            <a
+              href={
+                /http(s?):\/\//.test(profileData.blog)
+                  ? profileData.blog
+                  : `https://${profileData.blog}`
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
               {profileData.blog}
             </a>
           </Data>

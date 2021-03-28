@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import langColors from '../../../services/colorConfigs';
 
@@ -7,8 +7,9 @@ import { Container, Languague, Cleaner } from './styles';
 import { GithubUserContext } from '../../../contexts/GithubUser';
 
 const Filter = () => {
-  const [activeLang, setActiveLang] = useState(null);
-  const { reposData } = useContext(GithubUserContext);
+  const { reposData, activeLang, activeNewReposFilteredByLang } = useContext(
+    GithubUserContext,
+  );
 
   if (!reposData.length) return null;
 
@@ -36,14 +37,16 @@ const Filter = () => {
         <Languague
           key={lang}
           langColor={color}
-          onClick={() => setActiveLang(lang)}
+          onClick={() => activeNewReposFilteredByLang(lang)}
           className={activeLang === lang ? 'selected' : ''}
         >
           <span>{lang}</span>
           <span>{count}</span>
         </Languague>
       ))}
-      <Cleaner onClick={() => setActiveLang(null)}>Limpar</Cleaner>
+      <Cleaner onClick={() => activeNewReposFilteredByLang(null)}>
+        Limpar
+      </Cleaner>
     </Container>
   );
 };

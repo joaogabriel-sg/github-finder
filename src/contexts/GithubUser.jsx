@@ -9,9 +9,15 @@ export const GithubUserProvider = ({ children }) => {
   const [reposData, setReposData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeLang, setActiveLang] = useState(null);
+
+  function activeNewReposFilteredByLang(lang) {
+    setActiveLang(lang);
+  }
 
   async function getGithubUser(username) {
     try {
+      setActiveLang(null);
       setLoading(true);
       setError(null);
 
@@ -34,9 +40,11 @@ export const GithubUserProvider = ({ children }) => {
       value={{
         profileData,
         reposData,
+        activeLang,
         loading,
         error,
         getGithubUser,
+        activeNewReposFilteredByLang,
       }}
     >
       {children}

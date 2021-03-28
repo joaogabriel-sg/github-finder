@@ -38,7 +38,7 @@ Repository.propTypes = {
     name: PropTypes.string.isRequired,
     html_url: PropTypes.string.isRequired,
     language: PropTypes.string,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
   }).isRequired,
 };
 

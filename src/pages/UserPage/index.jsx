@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 import BtnReturn from '../../components/BtnReturn';
 import Profile from './Profile';
@@ -11,8 +11,13 @@ import { Container, Sidebar, Main } from './styles';
 import { GithubUserContext } from '../../contexts/GithubUser';
 
 const UserPage = () => {
-  const { loading, error } = useContext(GithubUserContext);
+  const { loading, error, getGithubUser } = useContext(GithubUserContext);
   const history = useHistory();
+  const { username } = useParams();
+
+  useEffect(() => {
+    getGithubUser(username);
+  }, []);
 
   if (loading) return <h1>Loading...</h1>;
 

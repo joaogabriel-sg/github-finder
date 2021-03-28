@@ -6,16 +6,20 @@ import { Title, RepositoriesContainer } from './styles';
 import { GithubUserContext } from '../../../contexts/GithubUser';
 
 const Repositories = () => {
-  const { reposData } = useContext(GithubUserContext);
+  const { reposData, activeLang } = useContext(GithubUserContext);
 
   return (
     <>
       <Title>Repositories</Title>
       {!reposData.length ? null : (
         <RepositoriesContainer>
-          {reposData.map((repository) => (
-            <Repository key={repository.id} repository={repository} />
-          ))}
+          {reposData
+            .filter((repository) =>
+              activeLang ? repository.language === activeLang : true,
+            )
+            .map((repository) => (
+              <Repository key={repository.id} repository={repository} />
+            ))}
         </RepositoriesContainer>
       )}
     </>
