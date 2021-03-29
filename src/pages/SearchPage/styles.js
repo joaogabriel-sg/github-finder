@@ -20,6 +20,7 @@ export const Title = styled.h1`
 
 export const GitHubLogo = styled(GitHub)`
   & > * {
+    transition: all 0.3s;
     fill: ${({ theme }) => theme.colors.text};
   }
 `;

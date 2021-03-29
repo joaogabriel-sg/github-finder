@@ -24,7 +24,11 @@ const Repository = ({ repository }) => {
       )}
       <Footer>
         <Language>{repository.language || ''}</Language>
-        <SeeMore href={repository.html_url} target="_blank">
+        <SeeMore
+          href={repository.html_url}
+          target="_blank"
+          langColor={langColor}
+        >
           See More
         </SeeMore>
       </Footer>

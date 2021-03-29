@@ -1,4 +1,5 @@
 import React from 'react';
+import SwitchThemeMode from '../../components/SwitchThemeMode';
 
 import SearchForm from './SearchForm';
 
@@ -9,6 +10,7 @@ const SearchPage = () => (
     <GitHubLogo />
     <Title>GitHub Finder</Title>
     <SearchForm />
+    <SwitchThemeMode />
   </Container>
 );
 

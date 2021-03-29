@@ -10,6 +10,8 @@ export const Container = styled.div`
   border-left: 0.4rem solid
     ${({ theme, langColor }) => langColor || theme.colors.text};
   border-radius: 0.4rem;
+
+  transition: all 0.3s;
 `;
 
 export const Name = styled.h3`
@@ -43,4 +45,13 @@ export const SeeMore = styled.a`
 
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
+
+  transition: background 0.3s, color 0.3s;
+
+  &:hover {
+    background: ${({ theme, langColor }) =>
+      langColor ? langColor : theme.colors.text};
+    color: ${({ theme, langColor }) =>
+      langColor ? theme.colors.text : theme.colors.primary};
+  }
 `;

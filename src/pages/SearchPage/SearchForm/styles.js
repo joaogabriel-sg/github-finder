@@ -23,6 +23,8 @@ export const Input = styled.input`
   font-weight: 700;
   font-style: italic;
   color: ${({ theme }) => theme.colors.text};
+
+  transition: all 0.3s;
 `;
 
 export const Button = styled.button`

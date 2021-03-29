@@ -5,11 +5,12 @@ import BtnReturn from '../../components/BtnReturn';
 import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
+import Loading from '../../components/Loading';
+import SwitchThemeMode from '../../components/SwitchThemeMode';
 
 import { Container, Sidebar, Main } from './styles';
 
 import { GithubUserContext } from '../../contexts/GithubUser';
-import Loading from '../../components/Loading';
 
 const UserPage = () => {
   const { loading, error, getGithubUser } = useContext(GithubUserContext);
@@ -23,7 +24,7 @@ const UserPage = () => {
   if (loading) return <Loading />;
 
   if (error) {
-    history.go(-1);
+    history.push('/');
     return null;
   }
 
@@ -37,6 +38,7 @@ const UserPage = () => {
       <Main>
         <Repositories />
       </Main>
+      <SwitchThemeMode />
     </Container>
   );
 };

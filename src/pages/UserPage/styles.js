@@ -21,15 +21,19 @@ export const Sidebar = styled.aside`
 
   padding: 2rem 1.6rem 2rem 0;
 
+  transition: background 0.3s;
+
   &::-webkit-scrollbar {
     background: ${({ theme }) => theme.colors.primary};
     width: 0.8rem;
+    transition: background 0.3s;
   }
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.secondary};
     border: 0.2rem solid ${({ theme }) => theme.colors.primary};
     border-radius: 1rem;
+    transition: background 0.3s;
   }
 
   @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
@@ -46,15 +50,19 @@ export const Main = styled.main`
   overflow-y: auto;
   padding: 2rem 4rem;
 
+  transition: background 0.3s;
+
   &::-webkit-scrollbar {
-    background: ${({ theme }) => theme.colors.secondary};
+    background: transparent;
     width: 0.8rem;
+    transition: background 0.3s;
   }
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.primary};
     border: 0.2rem solid ${({ theme }) => theme.colors.secondary};
     border-radius: 1rem;
+    transition: background 0.3s;
   }
 
   @media screen and (max-width: ${({ theme }) => theme.mediaQueries.tablet}) {
