@@ -7,6 +7,7 @@ import SwitchThemeMode from '../../components/SwitchThemeMode';
 import { Container, Title, GitHubLogo } from './styles';
 
 import { GithubUserContext } from '../../contexts/GithubUser';
+import Head from '../../helpers/Head';
 
 const SearchPage = () => {
   const { error } = useContext(GithubUserContext);
@@ -26,6 +27,7 @@ const SearchPage = () => {
 
   return (
     <Container>
+      <Head description="GitHub Finder is an unofficial GitHub application that searches a user's data by username." />
       <GitHubLogo />
       <Title>GitHub Finder</Title>
       <SearchForm />

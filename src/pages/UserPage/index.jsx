@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
+import Head from '../../helpers/Head';
 import BtnReturn from '../../components/BtnReturn';
 import Profile from './Profile';
 import Filter from './Filter';
@@ -30,6 +31,10 @@ const UserPage = () => {
 
   return (
     <Container>
+      <Head
+        title={username}
+        description={`${username} user page on GitHub Finder.`}
+      />
       <Sidebar>
         <BtnReturn text="Voltar" />
         <Profile />
