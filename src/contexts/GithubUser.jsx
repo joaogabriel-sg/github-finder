@@ -8,7 +8,7 @@ export const GithubUserProvider = ({ children }) => {
   const [profileData, setProfileData] = useState({});
   const [reposData, setReposData] = useState({});
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [activeLang, setActiveLang] = useState(null);
 
   function activeNewReposFilteredByLang(lang) {
@@ -19,7 +19,7 @@ export const GithubUserProvider = ({ children }) => {
     try {
       setActiveLang(null);
       setLoading(true);
-      setError(null);
+      setError(false);
 
       const { data: user } = await api.get(username);
       const { data: repos } = await api.get(`${username}/repos`);
@@ -27,7 +27,7 @@ export const GithubUserProvider = ({ children }) => {
       setProfileData(user);
       setReposData(repos);
     } catch (err) {
-      setError(err);
+      setError(true);
       setProfileData(null);
       setReposData(null);
     } finally {
