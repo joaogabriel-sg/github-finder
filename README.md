@@ -4,9 +4,11 @@
 
 **GitHub Finder** is an unofficial GitHub app that searches a user's data by username and shows the list of repositories, and can filter that list based on a programming language.
 
+### [🟢 See live](https://github-finder-joaogabriel-sg.vercel.app/)
+
 <p align="center">
-<img width="70%" src="https://i.imgur.com/dZeMADr.png" />
-<img width="70%" src="https://i.imgur.com/WP6aH2O.png" />
+<a href="https://github-finder-joaogabriel-sg.vercel.app/" target="_blank"><img width="70%" src="https://i.imgur.com/dZeMADr.png" /></a>
+<a href="https://github-finder-joaogabriel-sg.vercel.app/" target="_blank"><img width="70%" src="https://i.imgur.com/WP6aH2O.png" /></a>
 </p>
 
 # 🎮 Getting started
