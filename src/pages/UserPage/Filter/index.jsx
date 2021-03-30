@@ -45,7 +45,7 @@ const Filter = () => {
         </Languague>
       ))}
       <Cleaner onClick={() => activeNewReposFilteredByLang(null)}>
-        Limpar
+        Clear
       </Cleaner>
     </Container>
   );

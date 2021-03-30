@@ -36,7 +36,7 @@ const UserPage = () => {
         description={`${username} user page on GitHub Finder.`}
       />
       <Sidebar>
-        <BtnReturn text="Voltar" />
+        <BtnReturn text="Back" />
         <Profile />
         <Filter />
       </Sidebar>

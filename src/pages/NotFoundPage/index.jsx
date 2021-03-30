@@ -9,8 +9,8 @@ import { Container, NotFound } from './styles';
 const NotFoundPage = () => (
   <Container>
     <Head title="Not found" />
-    <NotFound>Essa página não existe...</NotFound>
-    <BtnReturn text="Voltar ao início" isStyled />
+    <NotFound>This page was not found...</NotFound>
+    <BtnReturn text="Back to start" isStyled />
     <SwitchThemeMode />
   </Container>
 );
